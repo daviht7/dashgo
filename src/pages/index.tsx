@@ -19,8 +19,6 @@ export default function SignIn() {
     resolver: yupResolver(signInFormSchema),
   });
 
-  console.log(formState.errors);
-
   const handleSingIn: SubmitHandler<SignInFormData> = async (values, event) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     console.log(values);
