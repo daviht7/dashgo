@@ -32,6 +32,9 @@
     "yup": "^1.0.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@types/faker": "^6.6.9",
+    "faker": "^6.6.6",
     "miragejs": "^0.1.47"
   }
 }
