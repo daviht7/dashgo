@@ -24,23 +24,29 @@ import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { useQuery } from "react-query";
 
 export default function UserList() {
-  const { data, isLoading, error } = useQuery("users", async () => {
-    const response = await fetch("http://localhost:3000/api/users");
-    const data = await response.json();
+  const { data, isLoading, error } = useQuery(
+    "users",
+    async () => {
+      const response = await fetch("http://localhost:3000/api/users");
+      const data = await response.json();
 
-    const users = data.users.map((user) => {
-      return {
-        ...user,
-        createdAt: new Date(user.createdAt).toLocaleDateString("pt-BR", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        }),
-      };
-    });
+      const users = data.users.map((user) => {
+        return {
+          ...user,
+          createdAt: new Date(user.createdAt).toLocaleDateString("pt-BR", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          }),
+        };
+      });
 
-    return users;
-  });
+      return users;
+    },
+    {
+      staleTime: 1000 * 5,
+    }
+  );
 
   const isWideVersion = useBreakpointValue({
     base: false,
