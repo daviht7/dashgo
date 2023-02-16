@@ -33,7 +33,7 @@ export function PaginationItem({
           bg: "gray.500",
         }}
       >
-        2
+        {number}
       </Button>
     );
   }
