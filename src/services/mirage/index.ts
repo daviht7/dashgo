@@ -1,6 +1,6 @@
 
 import { faker } from '@faker-js/faker';
-import { ActiveModelSerializer, createServer, Factory, Model, Response } from 'miragejs';
+import { createServer, Factory, Model, Response, ActiveModelSerializer } from 'miragejs';
 
 type User = {
   name: string;
