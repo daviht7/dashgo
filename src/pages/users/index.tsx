@@ -39,7 +39,7 @@ export default function UserList() {
 
   useEffect(() => {}, []);
 
-  async function handlePrefetchUser(userId: number) {
+  async function handlePrefetchUser(userId: string) {
     await queryClient.prefetchQuery(
       ["user", userId],
       async () => {
